@@ -20,7 +20,6 @@ export default function Home() {
     
       {!seccionActiva && <Hero onSelect={setSeccionActiva} />}
 
-    
       {!seccionActiva && (
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
           <Segmento 
@@ -46,8 +45,7 @@ export default function Home() {
         </section>
       )}
 
-  {
-      {seccionActiva === 'Catalogoled' && (
+      {seccionActiva === 'CatalogoLed' && (
         <div className="p-6">
           <button onClick={handleBack} className="bg-orange-600 px-4 py-2 rounded mb-4">
             ← Regresar
@@ -110,8 +108,7 @@ export default function Home() {
         </div>
       )}
 
-   
       <Footer />
     </div>
   )
-      }
+              }
