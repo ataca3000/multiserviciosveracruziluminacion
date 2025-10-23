@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import Hero from '../components/Hero.'
-import Segmento from '../components/Segmento.'
-import CatalogoLed from '../components/CatalogoLed.'
-import CatalogoPostes from '../components/CatalogoPostes.'
-import CatalogoSolar from '../components/CatalogoSolar.'
-import Instalaciones from '../components/Instalaciones.'
-import Cotiza from '../components/Cotiza.'
-import QuienesSomos from '../components/QuienesSomos.'
-import Mapa from '../components/Mapa.'
-import Footer from '../components/Footer.'
+import Hero from '../componets/Hero'
+import Segmento from '../componets/Segmento'
+import CatalogoLed from '../componets/CatalogoLed'
+import CatalogoPostes from '../componets/CatalogoPostes'
+import CatalogoSolar from '../componets/CatalogoSolar'
+import Instalaciones from '../componets/Instalaciones'
+import Cotiza from '../componets/Cotiza'
+import QuienesSomos from '../componets/QuienesSomos'
+import Mapa from '../componets/Mapa'
+import Footer from '../componets/Footer'
 
 export default function Home() {
   const [seccionActiva, setSeccionActiva] = useState(null)
@@ -16,12 +16,14 @@ export default function Home() {
   const handleBack = () => setSeccionActiva(null)
 
   return (
-    <div className="bg-black text-white font-sans">
-    
+    <div className="bg-black text-white font-sans min-h-screen flex flex-col">
+      
+      {/* HERO */}
       {!seccionActiva && <Hero onSelect={setSeccionActiva} />}
 
+      {/* GRID DE SEGMENTOS */}
       {!seccionActiva && (
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
           <Segmento 
             titulo="LED URBANO" 
             imagen="/img/ledurbano.jpg" 
@@ -35,7 +37,7 @@ export default function Home() {
           <Segmento 
             titulo="SOLAR INTELIGENTE" 
             imagen="/img/solar.jpg" 
-            onClick={() => setSeccionActiva('Solar')}
+            onClick={() => setSeccionActiva('CatalogoSolar')}
           />
           <Segmento 
             titulo="INSTALACIONES RECIENTES" 
@@ -45,6 +47,7 @@ export default function Home() {
         </section>
       )}
 
+      {/* SECCIONES ACTIVAS */}
       {seccionActiva === 'CatalogoLed' && (
         <div className="p-6">
           <button onClick={handleBack} className="bg-orange-600 px-4 py-2 rounded mb-4">
@@ -63,7 +66,7 @@ export default function Home() {
         </div>
       )}
 
-      {seccionActiva === 'Solar' && (
+      {seccionActiva === 'CatalogoSolar' && (
         <div className="p-6">
           <button onClick={handleBack} className="bg-orange-600 px-4 py-2 rounded mb-4">
             ← Regresar
@@ -83,32 +86,3 @@ export default function Home() {
 
       {seccionActiva === 'Cotiza' && (
         <div className="p-6">
-          <button onClick={handleBack} className="bg-orange-600 px-4 py-2 rounded mb-4">
-            ← Regresar
-          </button>
-          <Cotiza />
-        </div>
-      )}
-
-      {seccionActiva === 'QuienesSomos' && (
-        <div className="p-6">
-          <button onClick={handleBack} className="bg-orange-600 px-4 py-2 rounded mb-4">
-            ← Regresar
-          </button>
-          <QuienesSomos />
-        </div>
-      )}
-
-      {seccionActiva === 'Mapa' && (
-        <div className="p-6">
-          <button onClick={handleBack} className="bg-orange-600 px-4 py-2 rounded mb-4">
-            ← Regresar
-          </button>
-          <Mapa />
-        </div>
-      )}
-
-      <Footer />
-    </div>
-  )
-              }
