@@ -1,11 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+import '../styles/globals.css'
+import { Inter } from 'next/font/google'
 
-html, body {
-  @apply bg-black text-white;
-}
+const inter = Inter({ subsets: ['latin'] })
 
-button {
-  @apply transition duration-200;
+export default function App({ Component, pageProps }) {
+  return (
+    <main className={inter.className}>
+      <Component {...pageProps} />
+    </main>
+  )
 }
