@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Hero() {
+export default function Hero({ onSelect }) {
   return (
-    <section className="relative h-screen flex items-center justify-center bg-black text-center">
+    <section className="relative h-screen flex flex-col items-center justify-center bg-black text-center">
       {/* Imagen de fondo */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-40" 
@@ -21,12 +21,36 @@ export default function Hero() {
           Soluciones en alumbrado urbano, energía inteligente y diseño modular
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <button className="bg-orange-600 hover:bg-orange-500 transition px-8 py-3 rounded-lg font-semibold text-white shadow-lg">
-            Ver servicios
+        {/* Botones principales */}
+        <div className="flex flex-col sm:flex-row justify-center gap-6 mb-8">
+          <button 
+            onClick={() => onSelect('cotiza')}
+            className="bg-orange-600 hover:bg-orange-500 transition px-8 py-3 rounded-lg font-semibold text-white shadow-lg"
+          >
+            Cotiza ahora
           </button>
-          <button className="border border-orange-600 hover:bg-orange-600 hover:text-white transition px-8 py-3 rounded-lg font-semibold text-orange-500">
-            Solicitar colaboración
+          <button 
+            onClick={() => onSelect('conocenos')}
+            className="bg-black border border-orange-600 hover:bg-orange-600 hover:text-white transition px-8 py-3 rounded-lg font-semibold text-orange-500"
+          >
+            Conócenos
+          </button>
+          <button 
+            onClick={() => onSelect('servicios')}
+            className="bg-gray-800 hover:bg-gray-700 transition px-8 py-3 rounded-lg font-semibold text-orange-500 border border-gray-600"
+          >
+            Servicios
+          </button>
+        </div>
+
+        {/* Icono de ubicación */}
+        <div className="flex justify-center">
+          <button 
+            onClick={() => onSelect('mapa')}
+            className="flex flex-col items-center text-orange-500 hover:text-white transition"
+          >
+            <span className="text-4xl">📍</span>
+            <span className="mt-2 font-semibold">Ubicación</span>
           </button>
         </div>
       </div>
