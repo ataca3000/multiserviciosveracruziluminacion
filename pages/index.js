@@ -50,7 +50,10 @@ export default function Home() {
       {/* SECCIONES ACTIVAS */}
       {seccionActiva === 'CatalogoLed' && (
         <div className="p-6">
-          <button onClick={handleBack} className="bg-orange-600 px-4 py-2 rounded mb-4">
+          <button 
+            onClick={handleBack} 
+            className="bg-orange-600 px-4 py-2 rounded mb-4"
+          >
             ← Regresar
           </button>
           <CatalogoLed />
@@ -59,7 +62,10 @@ export default function Home() {
 
       {seccionActiva === 'CatalogoPostes' && (
         <div className="p-6">
-          <button onClick={handleBack} className="bg-orange-600 px-4 py-2 rounded mb-4">
+          <button 
+            onClick={handleBack} 
+            className="bg-orange-600 px-4 py-2 rounded mb-4"
+          >
             ← Regresar
           </button>
           <CatalogoPostes />
@@ -68,7 +74,10 @@ export default function Home() {
 
       {seccionActiva === 'CatalogoSolar' && (
         <div className="p-6">
-          <button onClick={handleBack} className="bg-orange-600 px-4 py-2 rounded mb-4">
+          <button 
+            onClick={handleBack} 
+            className="bg-orange-600 px-4 py-2 rounded mb-4"
+          >
             ← Regresar
           </button>
           <CatalogoSolar />
@@ -77,7 +86,10 @@ export default function Home() {
 
       {seccionActiva === 'Instalaciones' && (
         <div className="p-6">
-          <button onClick={handleBack} className="bg-orange-600 px-4 py-2 rounded mb-4">
+          <button 
+            onClick={handleBack} 
+            className="bg-orange-600 px-4 py-2 rounded mb-4"
+          >
             ← Regresar
           </button>
           <Instalaciones />
@@ -86,3 +98,42 @@ export default function Home() {
 
       {seccionActiva === 'Cotiza' && (
         <div className="p-6">
+          <button 
+            onClick={handleBack} 
+            className="bg-orange-600 px-4 py-2 rounded mb-4"
+          >
+            ← Regresar
+          </button>
+          <Cotiza />
+        </div>
+      )}
+
+      {seccionActiva === 'QuienesSomos' && (
+        <div className="p-6">
+          <button 
+            onClick={handleBack} 
+            className="bg-orange-600 px-4 py-2 rounded mb-4"
+          >
+            ← Regresar
+          </button>
+          <QuienesSomos />
+        </div>
+      )}
+
+      {seccionActiva === 'Mapa' && (
+        <div className="p-6">
+          <button 
+            onClick={handleBack} 
+            className="bg-orange-600 px-4 py-2 rounded mb-4"
+          >
+            ← Regresar
+          </button>
+          <Mapa />
+        </div>
+      )}
+
+      {/* FOOTER */}
+      <Footer />
+    </div>
+  )
+                     }
