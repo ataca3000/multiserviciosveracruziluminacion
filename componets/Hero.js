@@ -31,7 +31,7 @@ export default function Hero({ onSelect }) {
           </button>
           <button 
             onClick={() => onSelect('conocenos')}
-            className="bg-black border border-orange-600 hover:bg-orange-600 hover:text-white transition px-8 py-3 rounded-lg font-semibold text-orange-500"
+            className="border border-orange-600 hover:bg-orange-600 hover:text-white transition px-8 py-3 rounded-lg font-semibold text-orange-500"
           >
             Conócenos
           </button>
